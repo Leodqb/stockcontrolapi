@@ -1,0 +1,7 @@
+Mudanças:
+    1º inserido modelo do squema sql do banco de dados da aplicação,
+        com os modelos basiscos das tabelas de Produtos, Fornecedores e Dados Produtos.
+
+    2º inplementada camada de persistencia da aplicação (repositorios)
+
+    3º adicionadas interfaces de services referentes a regra de negocio de Produto, Fornecedor e DadosProduto
