@@ -22,11 +22,10 @@ public class Produto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    @NotEmpty
-    @Column(length = 20)
+    @NotEmpty(message = "{um.produto.deve.conter.um.nome}")
     private String nomeProduto;
-    @NotNull
-    @Column(length = 20,precision = 2)
+    @NotNull(message = "{um.produto.deve.conter.um.valor}")
+    @Column(precision = 20, scale = 2)
     private double valor;
 
 

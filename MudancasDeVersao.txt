@@ -1,7 +1,12 @@
-Mudanças:
-    1º inserido modelo do squema sql do banco de dados da aplicação,
-        com os modelos basiscos das tabelas de Produtos, Fornecedores e Dados Produtos.
+mudanças:
+    1º adicionadas configrações para internacionalização do sistema "Classe: ResponseSystesConfig"
+    os arquivo que contem as configurações/idoma das respostas e o arquivos
+     "messaging_response_language_ptbr.properties" para adicionar um novo idioma ao sistema basta criar um novo
+     arquivo copiar as mensagens contidas no arquivo sitado e taduzilas e recomendado utilizar o padrao de nomeclatura
+     (messaging_response_language_"as iniciais do nome do idioma e de seu respequitivo pais")
+     seguindo esse padrão para fazer uma troca de idioma do sistema basta ir a classe " ResponseSystesConfig"
+     e modificar o metodo  "messageSource.setBasename("classpath:messaging_response_language_ptbr")"
+     trocando  os ultimos caracteres do nome da classe de idioma padrão por as ultimas da classe criada
 
-    2º inplementada camada de persistencia da aplicação (repositorios)
 
-    3º adicionadas interfaces de services referentes a regra de negocio de Produto, Fornecedor e DadosProduto
+     2º faze inicial da inplementaçao de services,dtos,e controles da entidade produto
