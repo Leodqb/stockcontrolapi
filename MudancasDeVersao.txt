@@ -1,12 +1,9 @@
-mudanças:
-    1º adicionadas configrações para internacionalização do sistema "Classe: ResponseSystesConfig"
-    os arquivo que contem as configurações/idoma das respostas e o arquivos
-     "messaging_response_language_ptbr.properties" para adicionar um novo idioma ao sistema basta criar um novo
-     arquivo copiar as mensagens contidas no arquivo sitado e taduzilas e recomendado utilizar o padrao de nomeclatura
-     (messaging_response_language_"as iniciais do nome do idioma e de seu respequitivo pais")
-     seguindo esse padrão para fazer uma troca de idioma do sistema basta ir a classe " ResponseSystesConfig"
-     e modificar o metodo  "messageSource.setBasename("classpath:messaging_response_language_ptbr")"
-     trocando  os ultimos caracteres do nome da classe de idioma padrão por as ultimas da classe criada
+// alterações em desenvolvimento*
+
+adcionada classe de controle de erros do sistema 
+classes de modelo dto de dads produto e fornecedor adcionadas 
+classe de serviço de fornecedor inplementada 
+classes de exeçao de erro no salvamento e fornecedorr service erro adicionadas
 
 
-     2º faze inicial da inplementaçao de services,dtos,e controles da entidade produto
+

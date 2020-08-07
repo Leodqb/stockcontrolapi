@@ -1,5 +1,6 @@
 package io.com.github.leodqb.model.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -8,6 +9,7 @@ import org.hibernate.validator.constraints.br.CNPJ;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
+import java.util.List;
 import java.util.Set;
 
 //Classe que faz referencia a tabela de fornecedores do banco de dados
@@ -22,14 +24,17 @@ public class Fornecedor {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    @NotEmpty
+    @NotEmpty(message = "voce deve informar o nome do fornecedor")
     private String nomeFornecedor;
-    @NotEmpty
-    private String nomeFamtazia;
+    @NotEmpty(message = "você devve informar o nome fantazia do fornecedor")
+    private String nomeFantazia;
     @CNPJ
-    @NotEmpty
+    @NotEmpty(message = "você deve informar o cnpj do fornecedor")
+    @Column(length = 14)
     private String cnpj;
-    @OneToMany
+
+    @JsonIgnore
+    @OneToMany (mappedBy = "fornecedorId",fetch = FetchType.LAZY )
     private Set<DadosProduto> dadosProduto;
 
 }

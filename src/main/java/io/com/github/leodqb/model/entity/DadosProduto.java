@@ -1,5 +1,6 @@
 package io.com.github.leodqb.model.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -13,18 +14,24 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @Builder
 @Entity
+@Table(name = "dadosproduto")
 public class DadosProduto {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     @OneToOne
+    @JoinColumn(name = "produto_id")
     private Produto produto;
+
     @ManyToOne
-    private Fornecedor fornecedor;
+    @JoinColumn(name = "fornecedor_id")
+    @JsonIgnore
+    private Fornecedor fornecedorId;
     private Integer quantidade;
     private LocalDate dataEntrega;
     private Double valorRemessa;
-    private LocalDate dataFabricaca;
+    private LocalDate dataFabricacao;
     private LocalDate dataValidade;
 }
+
